@@ -55,9 +55,10 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "inicio"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/Aires_acondicionados" className="w-100">Aires acondicionados</Link></li>
+              <li><Link to="/Aires_Acondicionados" className="w-100">Aires acondicionados</Link></li>
               <li><Link to="/Luminarias" className="w-100">Luminarias</Link></li>
               <li><Link to="/Miscelaneos" className="w-100">Misceláneos</Link></li>
+              <li><Link to="/Bitacora_de_inventarios">Bitácora de inventarios</Link></li>
             </ul>
           </Collapse>
         </li>
@@ -70,10 +71,8 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "usuarios"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/administrador" className="w-100">Administrador</Link></li>
-              <li><Link to="/responsable_UR" className="w-100">Responsable UR</Link></li>
-              <li><Link to="/capturista" className="w-100">Capturista de datos</Link></li>
-              <li><Link to="/lector" className="w-100">Lector</Link></li>
+              <li><Link to="/usuarios" className="w-100">Usuarios de Alta</Link></li>
+              <li><Link to="/usuarios_baja" className="w-100">Usuarios de Baja</Link></li>
             </ul>
           </Collapse>
         </li>
