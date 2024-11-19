@@ -16,6 +16,8 @@ import Add_Miscelaneo from "./pages/Inventarios/Miscelaneos/form_add";
 import Users from "./pages/Users";
 import Users_Inactivos from "./pages/Users/inactivos";
 import Add_User from "./pages/Users/add_user";
+import Tarifa from "./pages/Tarifas";
+import Add_TAR from "./pages/Tarifas/form_add";
 
 function App() {
   return (
@@ -39,7 +41,10 @@ function App() {
               <Route path="/usuarios" element={<Users />}></Route>
               <Route path="/usuarios_baja" element={<Users_Inactivos />}></Route>
               <Route path="/agregar_usuario" element={<Add_User />}></Route>
-              <Route path="/login" element={<Login />}></Route>
+              <Route path="/login" element={<Login />}></Route>    
+              <Route path="/tarifas" element={< Tarifa />} ></Route>
+              <Route path="/agregar_tarifa" element={< Add_TAR />} ></Route>
+
             </Routes>
           </div>
         </div>

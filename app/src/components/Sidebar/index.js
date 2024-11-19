@@ -94,9 +94,13 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <Link to="/tarifas" className={`w-100 ${activeLink === "tarifas" ? "active" : ""}`} onClick={() => handleLinkClick("tarifas")}>
+          <Link to="tarifas"
+           className={`w-100 ${activeLink === "tarifas" ? "active" : ""}`}
+            onClick={() => handleLinkClick("tarifas")}
+            >
             <span className="icon"><TbReceiptDollar /></span>
             Tarifas
+            
           </Link>
         </li>
 
