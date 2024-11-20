@@ -16,6 +16,10 @@ import Add_Miscelaneo from "./pages/Inventarios/Miscelaneos/form_add";
 import Users from "./pages/Users";
 import Users_Inactivos from "./pages/Users/inactivos";
 import Add_User from "./pages/Users/add_user";
+import Tarifa from "./pages/Tarifas";
+import Add_TAR from "./pages/Tarifas/form_add";
+
+function App() {
 import Bitacora_Inventario from "./pages/Inventarios/Historial";
 import Indicadores_inventarios from "./pages/Indicadores";
 import Email_Pass_Reset from "./pages/Login/Reset/email";
@@ -39,6 +43,27 @@ function AppContent() {
           <div className="sidebarWrapper">
             <Sidebar />
           </div>
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Dasboard />}></Route>
+              <Route path="/Dashboard" element={<Dasboard />}></Route>
+              <Route path="/Aires_Acondicionados" element={<Inventario_AA />}></Route>
+              <Route path="/agregar_AA" element={<Add_AA />}></Route>
+              <Route path="/Luminarias" element={<Inventario_Luminarias />}></Route>
+              <Route path="/agregar_Luminaria" element={<Add_Luminaria />}></Route>
+              <Route path="/Miscelaneos" element={<Inventario_Miscelaneos />}></Route>
+              <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />}></Route>
+              <Route path="/usuarios" element={<Users />}></Route>
+              <Route path="/usuarios_baja" element={<Users_Inactivos />}></Route>
+              <Route path="/agregar_usuario" element={<Add_User />}></Route>
+              <Route path="/login" element={<Login />}></Route>    
+              <Route path="/tarifas" element={< Tarifa />} ></Route>
+              <Route path="/agregar_tarifa" element={< Add_TAR />} ></Route>
+
+            </Routes>
+          </div>
+        </div>
+      </BrowserRouter>
         )}
         <div className={`content ${isLoginRoute ? "full-width" : ""}`}>
           <Routes>
