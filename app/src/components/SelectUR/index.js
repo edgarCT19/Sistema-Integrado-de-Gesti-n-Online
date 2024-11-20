@@ -3,7 +3,7 @@ import React from "react";
 const SelectUR = () => {
   return (
     <>
-    <select className="select-filter">
+    <select className="select-filter mx-2">
         <option>Unidad Responsable</option>
         <option value="01">01-Facultad de Ingeniería</option>
         <option value="02">02-Centro de Estudios de Desarrollo Sustentable y Aprovechamiento de la Vida Silvestre</option>

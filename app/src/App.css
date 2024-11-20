@@ -32,6 +32,23 @@ body{font-family: "Soberana Sans Regular", sans-serif !important; background-col
     border-radius: 10px;
 }
 
+.full-width{
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  background-color: var(--color-uacam-background) !important;
+}
+
+a {
+  color: var(--color-uacam-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-uacam-secondary);
+}
+
 /* Estilos del sistema*/
 
 /* Header */
@@ -247,6 +264,7 @@ En caso de colocar notificaciones, aquí irán
   text-decoration: none; 
   transition: background-color 0.3s; 
   margin-top: 2px;
+  align-items: center;
 }
 
 .main .sidebarWrapper .sidebar ul li a:hover {
@@ -279,7 +297,6 @@ En caso de colocar notificaciones, aquí irán
 
 /* Sidebar Submenú */
 .main .sidebarWrapper .sidebar ul li .submenu {
-  margin-left: 38px;
   display: flex;
   flex-direction: column;
   border-left: 1px solid var(--color-uacam-secondary-light); /* Barra lateral */
@@ -298,7 +315,8 @@ En caso de colocar notificaciones, aquí irán
 
 .main .sidebarWrapper .sidebar ul li .submenu li a {
   font-size: 13px;
-  padding: 5px 10px; 
+  padding: 6px 10px; 
+  align-items: center;
   color: var(--color-uacam-primary);
   justify-content: left;
   border-radius: 7px; 
@@ -322,7 +340,6 @@ En caso de colocar notificaciones, aquí irán
 
 /* Sidebar Submenú - Submenú */
 .main .sidebarWrapper .sidebar ul li .submenu-submenu {
-  margin-left: 28px;
   display: flex;
   flex-direction: column;
   transition: all 0.6s;
@@ -336,11 +353,11 @@ En caso de colocar notificaciones, aquí irán
 
 .main .sidebarWrapper .sidebar ul li .submenu-submenu li a {
   font-size: 13px;
-  padding: 5px 12px;
+  padding: 6px 10px;
   color: var(--color-uacam-primary);
-  justify-content: left;
   border-radius: 7px;
-  text-decoration: none; 
+  text-decoration: none;
+  align-items: center; 
 }
 
 /* Sidebar - Contendor de la imagen YumKaax*/
@@ -393,19 +410,10 @@ En caso de colocar notificaciones, aquí irán
   border-radius: 8px;
 }
 
-/* Login Section */
-
-.loginSection{
-  width: 100%;
-  height: 100vh;
-  padding: 35px 25px;
-  
-}
-
 /* Estilos de tabla A.A */
 
 .card{
-  border-radius: 6px !important;
+  border-radius: 8px !important;
 }
 
 .card .tittle-table{
@@ -483,4 +491,52 @@ En caso de colocar notificaciones, aquí irán
 .select-filter:focus {
   outline: none;
   border-color: var(--color-uacam-datatext);
+}
+
+ /* Tabla de indicadores */
+.indicator-table-wrapper {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.indicator-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.indicator-header {
+  background-color: var(--color-uacam-primary);
+  color: #ffffff;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.indicator-cell {
+  padding: 12px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 12px;
+}
+
+.indicator-section-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: left;
+  padding: 15px 0;
+  color: var(--color-uacam-primary);
+}
+
+.indicator-subtitle {
+  font-weight: normal;
+  font-size: 12px;
+  color: var(--color-uacam-primary);
+  text-align: left;
+  padding-bottom: 10px;
+  font-weight: 600;
 }

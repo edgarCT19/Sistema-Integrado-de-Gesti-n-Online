@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import  Tooltip  from "@mui/material/Tooltip";
 
 import logo from "../../assets/images/LogoUacamWeb.png";
 
@@ -38,17 +39,18 @@ const Header = () => {
 
             {/* Logo Wrapper */}
             <div className="col-sm-2 part1">
-              <Link to={"/"} className="d-flex align-items-center logo">
+              <Link to={"/Inicio"} className="d-flex align-items-center logo">
                 <img src={logo}></img>
               </Link>
             </div>
 
             <div className="col-sm-3 d-flex align-items-center pl-4 part2 res-hide">
-
-              <Button variant="text" className="rounded-circle mr-3">
-                {" "}
-                <MdMenuOpen />{" "}
-              </Button>
+              <Tooltip title="Cerrar panel de navegación">
+                <Button variant="text" className="rounded-circle mr-3">
+                  {" "}
+                  <MdMenuOpen />{" "}
+                </Button>
+              </Tooltip> 
                  
               {/* <Search></Search> */}   
 
@@ -56,20 +58,26 @@ const Header = () => {
             
             <div className="col-sm-7 justify-content-end d-flex align-items-center part3">
 
-              <Button variant="text" className="rounded-circle mr-3">
-                {" "}
-                <MdOutlineLightMode />{" "}
-              </Button>
+              <Tooltip title="Activar modo nocturno">
+                <Button variant="text" className="rounded-circle mr-3">
+                  {" "}
+                  <MdOutlineLightMode />{" "}
+                </Button>
+              </Tooltip>
 
-              <Button variant="text" className="rounded-circle mr-3">
-                {" "}
-                <FaWhatsapp />{" "}
-              </Button>
+              <Tooltip title="Ir a Whatsapp">
+                <Button variant="text" className="rounded-circle mr-3">
+                  {" "}
+                  <FaWhatsapp />{" "}
+                </Button> 
+              </Tooltip>
 
-              <Button variant="text" className="rounded-circle mr-3">
-                {" "}
-                <BiLogoGmail />{" "}
-              </Button>
+              <Tooltip title="Ir a Gmail">
+                <Button variant="text" className="rounded-circle mr-3">
+                  {" "}
+                  <BiLogoGmail />{" "}
+                </Button>
+              </Tooltip>
 
               {/** Menú de perfil */}
               <div className="myAccWrapper">
@@ -128,7 +136,7 @@ const Header = () => {
                     </ListItemIcon>
                     Mi perfil
                   </MenuItem>
-                  <MenuItem component={Link} to="/" onClick={handleCloseMyAccDr} className="menu-link">
+                  <MenuItem component={Link} to="https://uacam.mx/paginas/ver/249" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <InfoIcon fontSize="small" />
                     </ListItemIcon>
@@ -150,6 +158,7 @@ const Header = () => {
                   <MenuItem
                     onClick={handleCloseMyAccDr}
                     className="text-danger"
+                    component={Link} to="/login"
                   >
                     <ListItemIcon className="text-danger">
                       <Logout fontSize="small" />

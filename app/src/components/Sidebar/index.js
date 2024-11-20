@@ -5,10 +5,10 @@ import LogoFoot from "../Footer";
 
 import { Link } from "react-router-dom";
 
-import { FaAngleRight } from "react-icons/fa6";
-import { MdStackedLineChart, MdOutlineInventory, MdEnergySavingsLeaf } from "react-icons/md";
-import { TbReportAnalytics, TbReceiptDollar } from "react-icons/tb";
-import { FaUserCheck, FaRecycle, FaClipboardList, FaHouseDamage } from "react-icons/fa";
+import { FaAngleRight, FaChartLine, FaBox, FaMagnifyingGlassChart } from "react-icons/fa6";
+import { MdStackedLineChart, MdOutlineInventory, MdEnergySavingsLeaf, MdArrowRight  } from "react-icons/md";
+import { TbReportAnalytics, TbReceiptDollar, TbPointFilled } from "react-icons/tb";
+import { FaUserCheck, FaRecycle, FaClipboardList, FaHouseDamage, FaBuilding  } from "react-icons/fa";
 import { SiAzureartifacts } from "react-icons/si";
 
 const Sidebar = () => {
@@ -55,10 +55,26 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "inicio"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/Aires_Acondicionados" className="w-100">Aires acondicionados</Link></li>
-              <li><Link to="/Luminarias" className="w-100">Luminarias</Link></li>
-              <li><Link to="/Miscelaneos" className="w-100">Misceláneos</Link></li>
-              <li><Link to="/Bitacora_de_inventarios">Bitácora de inventarios</Link></li>
+              <li><Link to="/Aires_Acondicionados" className="w-100"><span className="icon"><MdArrowRight   /></span>Aires acondicionados</Link></li>
+              <li><Link to="/Luminarias" className="w-100"><span className="icon"><MdArrowRight   /></span>Luminarias</Link></li>
+              <li><Link to="/Miscelaneos" className="w-100"><span className="icon"><MdArrowRight   /></span>Misceláneos</Link></li>
+              <li><Link to="/Bitacora_de_inventarios"><span className="icon"><MdArrowRight   /></span>Historial de inventarios</Link></li>
+            </ul>
+          </Collapse>
+        </li>
+
+        <li>
+          <Link to="#" className={`w-100 ${activeLink === "UR" ? "active" : ""}`} onClick={() => toggleSubmenu("UR")}>
+            <span className="icon"><FaBuilding  /></span>
+            Unidad Responsable
+            <span className={`arrow ${openSubmenu === "UR" ? "rotate" : ""}`}><FaAngleRight /></span>
+          </Link>
+          <Collapse in={openSubmenu === "UR"} timeout="auto" unmountOnExit>
+            <ul className="submenu">
+              <li><Link to="/unidad_responsable" className="w-100"><span className="icon"><MdArrowRight   /></span>Unidad</Link></li>
+              <li><Link to="/edificio" className="w-100"><span className="icon"><MdArrowRight   /></span>Edificio</Link></li>
+              <li><Link to="/nivel" className="w-100"><span className="icon"><MdArrowRight   /></span>Nivel</Link></li>
+              <li><Link to="/area" className="w-100"><span className="icon"><MdArrowRight   /></span>Área</Link></li>
             </ul>
           </Collapse>
         </li>
@@ -71,24 +87,25 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "usuarios"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/usuarios" className="w-100">Usuarios de Alta</Link></li>
-              <li><Link to="/usuarios_baja" className="w-100">Usuarios de Baja</Link></li>
+              <li><Link to="/usuarios" className="w-100"><span className="icon"><MdArrowRight   /></span>Usuarios de Alta</Link></li>
+              <li><Link to="/usuarios_baja" className="w-100"><span className="icon"><MdArrowRight   /></span>Usuarios de Baja</Link></li>
             </ul>
           </Collapse>
         </li>
 
         <li>
           <Link to="#" className={`w-100 ${activeLink === "indicadores" ? "active" : ""}`} onClick={() => toggleSubmenu("indicadores")}>
-            <span className="icon"><MdStackedLineChart /></span>
+            <span className="icon"><FaMagnifyingGlassChart /></span>
             Indicadores
             <span className={`arrow ${openSubmenu === "indicadores" ? "rotate" : ""}`}><FaAngleRight /></span>
           </Link>
           <Collapse in={openSubmenu === "indicadores"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="#" className="w-100">Indicador 1</Link></li>
-              <li><Link to="#" className="w-100">Indicador 2</Link></li>
-              <li><Link to="#" className="w-100">Indicador 3</Link></li>
-              <li><Link to="#" className="w-100">Indicador 4</Link></li>
+              <li><Link to="/Indicadores_inventarios" className="w-100"><span className="icon"><MdArrowRight   /></span>Inventarios</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores globales</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Concentrados</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores de concentrados</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores finales</Link></li>
             </ul>
           </Collapse>
         </li>
@@ -108,10 +125,10 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "facturas"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/factura_gdmto" className="w-100">GDMTO</Link></li>
-              <li><Link to="/factura_gdmth" className="w-100">GDMTH</Link></li>
-              <li><Link to="/factura_gdbt" className="w-100">GDBT</Link></li>
-              <li><Link to="/factura_pdbt" className="w-100">PDBT</Link></li>
+              <li><Link to="/factura_gdmto" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTO</Link></li>
+              <li><Link to="/factura_gdmth" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTH</Link></li>
+              <li><Link to="/factura_gdbt" className="w-100"><span className="icon"><MdArrowRight   /></span>GDBT</Link></li>
+              <li><Link to="/factura_pdbt" className="w-100"><span className="icon"><MdArrowRight   /></span>PDBT</Link></li>
             </ul>
           </Collapse>
         </li>
@@ -124,25 +141,41 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "reportes"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="#" className="w-100">Reporte 1</Link></li>
-              <li><Link to="#" className="w-100">Reporte 2</Link></li>
-              <li><Link to="#" className="w-100">Reporte 3</Link></li>
-              <li><Link to="#" className="w-100">Reporte 4</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácoras</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Inventario de A.A.</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Inventario de Luminarias</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Inventario de Misceláneos</Link></li>
+              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte 4</Link></li>
               <li>
                 <Link to="#" className="w-100" onClick={() => toggleNestedSubmenu("reporte5")}>
+                <span className="icon"><MdArrowRight   /></span>
                   Reporte 5
                   <span className={`arrow ${openNestedSubmenu === "reporte5" ? "rotate" : ""}`}><FaAngleRight /></span>
                 </Link>
                 <Collapse in={openNestedSubmenu === "reporte5"} timeout="auto" unmountOnExit>
                   <ul className="submenu-submenu">
-                    <li><Link to="#" className="w-100"> Submenú-Submenú</Link></li>
-                    <li><Link to="#" className="w-100"> Submenú-Submenú</Link></li>
-                    <li><Link to="#" className="w-100"> Submenú-Submenú</Link></li>
+                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
+                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
+                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
                   </ul>
                 </Collapse>
               </li>
             </ul>
           </Collapse>
+        </li>
+
+        <li>
+          <Link to="/lineas_base" className={`w-100 ${activeLink === "lineas_base" ? "active" : ""}`} onClick={() => handleLinkClick("lineas_base")}>
+            <span className="icon"><MdStackedLineChart /></span>
+            Lineas base
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/subestaciones" className={`w-100 ${activeLink === "subestaciones" ? "active" : ""}`} onClick={() => handleLinkClick("subestaciones")}>
+            <span className="icon"><FaBox /></span>
+            Subestaciones
+          </Link>
         </li>
 
       </ul>
@@ -163,8 +196,8 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RP"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100">Bitácora mensual-RP</Link></li>
-              <li><Link to="" className="w-100">Bitácora de almacenamiento temporal-RP</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora mensual-RP</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora de almacenamiento temporal-RP</Link></li>
             </ul>
             </Collapse>
           </li>
@@ -177,8 +210,8 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RPBI"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100">Bitácora generacion - RPBI</Link></li>
-              <li><Link to="" className="w-100">Bitácora recoleta - RPBI</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora generacion - RPBI</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora recoleta - RPBI</Link></li>
             </ul>
             </Collapse>
           </li>
@@ -191,9 +224,9 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RSU"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100">Registrar centro de acopio - RME</Link></li>
-              <li><Link to="" className="w-100">Disposición en vertedero municipal</Link></li>
-              <li><Link to="" className="w-100">Centro de acopio residuos para reuso y/o reciclaje</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Registrar centro de acopio - RME</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Disposición en vertedero municipal</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Centro de acopio residuos para reuso y/o reciclaje</Link></li>
             </ul>
             </Collapse>
           </li>
@@ -206,12 +239,12 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "BitacoraReporte"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100">Reporte Bitácora 1</Link></li>
-              <li><Link to="" className="w-100">Reporte Bitácora 2</Link></li>
-              <li><Link to="" className="w-100">Reporte Bitácora 3</Link></li>
-              <li><Link to="" className="w-100">Reporte Bitácora 4</Link></li>
-              <li><Link to="" className="w-100">Reporte Bitácora 5</Link></li>
-              <li><Link to="" className="w-100">Reporte Bitácora 6</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 1</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 2</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 3</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 4</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 5</Link></li>
+              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte Bitácora 6</Link></li>
             </ul>
             </Collapse>
           </li>
