@@ -59,24 +59,28 @@ const Header = () => {
             <div className="col-sm-7 justify-content-end d-flex align-items-center part3">
 
               <Tooltip title="Activar modo nocturno">
-                <Button variant="text" className="rounded-circle mr-3">
+                <Button variant="text" className="rounded-circle mx-2">
                   {" "}
                   <MdOutlineLightMode />{" "}
                 </Button>
               </Tooltip>
 
               <Tooltip title="Ir a Whatsapp">
-                <Button variant="text" className="rounded-circle mr-3">
-                  {" "}
-                  <FaWhatsapp />{" "}
-                </Button> 
+                <Link to={"https://wa.me/<numero>"}>
+                  <Button variant="text" className="rounded-circle">
+                    {" "}
+                    <FaWhatsapp />{" "}
+                  </Button> 
+                </Link>
               </Tooltip>
 
               <Tooltip title="Ir a Gmail">
-                <Button variant="text" className="rounded-circle mr-3">
-                  {" "}
-                  <BiLogoGmail />{" "}
-                </Button>
+                <Link to={"mailto:<email>?subject=Asunto&body=Cuerpo%20del%20correo"}>
+                  <Button variant="text" className="rounded-circle mx-2">
+                    {" "}
+                    <BiLogoGmail />{" "}
+                  </Button>
+                </Link>
               </Tooltip>
 
               {/** Menú de perfil */}

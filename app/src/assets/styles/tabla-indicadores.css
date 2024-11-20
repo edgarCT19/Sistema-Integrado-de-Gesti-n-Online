@@ -1,0 +1,47 @@
+/* Tabla de indicadores */
+.indicator-table-wrapper {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--color-uacam-white);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .indicator-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .indicator-header {
+    background-color: var(--color-uacam-primary);
+    color: var(--color-uacam-white);
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .indicator-cell {
+    padding: 12px;
+    text-align: center;
+    color: var(--color-uacam-black);
+    border-bottom: 1px solid var(--color-uacam-secondary-light);
+    font-size: 12px;
+  }
+  
+  .indicator-section-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 15px 0;
+    color: var(--color-uacam-primary);
+  }
+  
+  .indicator-subtitle {
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--color-uacam-primary);
+    text-align: left;
+    padding-bottom: 10px;
+    font-weight: 600;
+  }

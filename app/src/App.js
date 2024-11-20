@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
+
+// Importaciones de componentes
 import Dashboard from "./pages/Dashboard";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -18,8 +20,6 @@ import Users_Inactivos from "./pages/Users/inactivos";
 import Add_User from "./pages/Users/add_user";
 import Tarifa from "./pages/Tarifas";
 import Add_TAR from "./pages/Tarifas/form_add";
-
-function App() {
 import Bitacora_Inventario from "./pages/Inventarios/Historial";
 import Indicadores_inventarios from "./pages/Indicadores";
 import Email_Pass_Reset from "./pages/Login/Reset/email";
@@ -32,8 +32,11 @@ import Subestaciones from "./pages/Subestaciones";
 
 function AppContent() {
   const location = useLocation();
-  const isLoginRoute = location.pathname === "/login" || location.pathname === "/reset-password" || 
-                       location.pathname === "/code-security" || location.pathname === "/new_password";
+  const isLoginRoute =
+    location.pathname === "/login" ||
+    location.pathname === "/reset-password" ||
+    location.pathname === "/code-security" ||
+    location.pathname === "/new_password";
 
   return (
     <>
@@ -43,31 +46,10 @@ function AppContent() {
           <div className="sidebarWrapper">
             <Sidebar />
           </div>
-          <div className="content">
-            <Routes>
-              <Route path="/" element={<Dasboard />}></Route>
-              <Route path="/Dashboard" element={<Dasboard />}></Route>
-              <Route path="/Aires_Acondicionados" element={<Inventario_AA />}></Route>
-              <Route path="/agregar_AA" element={<Add_AA />}></Route>
-              <Route path="/Luminarias" element={<Inventario_Luminarias />}></Route>
-              <Route path="/agregar_Luminaria" element={<Add_Luminaria />}></Route>
-              <Route path="/Miscelaneos" element={<Inventario_Miscelaneos />}></Route>
-              <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />}></Route>
-              <Route path="/usuarios" element={<Users />}></Route>
-              <Route path="/usuarios_baja" element={<Users_Inactivos />}></Route>
-              <Route path="/agregar_usuario" element={<Add_User />}></Route>
-              <Route path="/login" element={<Login />}></Route>    
-              <Route path="/tarifas" element={< Tarifa />} ></Route>
-              <Route path="/agregar_tarifa" element={< Add_TAR />} ></Route>
-
-            </Routes>
-          </div>
-        </div>
-      </BrowserRouter>
         )}
         <div className={`content ${isLoginRoute ? "full-width" : ""}`}>
           <Routes>
-            {/* Redirigir la raíz al login */}
+            {/* Redirigir raíz al login */}
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/Inicio" element={<Dashboard />} />
@@ -80,15 +62,17 @@ function AppContent() {
             <Route path="/usuarios" element={<Users />} />
             <Route path="/usuarios_baja" element={<Users_Inactivos />} />
             <Route path="/agregar_usuario" element={<Add_User />} />
+            <Route path="/tarifas" element={<Tarifa />} />
+            <Route path="/agregar_tarifa" element={<Add_TAR />} />
             <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
-            <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />}></Route>
-            <Route path="/area" element={<Area />}></Route>
-            <Route path="/edificio" element={<Edificio />}></Route>
-            <Route path="/unidad_responsable" element={<Unidad />}></Route>
-            <Route path="/subestaciones" element={<Subestaciones />}></Route>
+            <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />} />
+            <Route path="/area" element={<Area />} />
+            <Route path="/edificio" element={<Edificio />} />
+            <Route path="/unidad_responsable" element={<Unidad />} />
+            <Route path="/subestaciones" element={<Subestaciones />} />
             <Route path="/reset-password" element={<Email_Pass_Reset />} />
-            <Route path="/code-security" element={<Security_Code />}></Route>
-            <Route path="/new_password" element={<New_Password />}></Route>
+            <Route path="/code-security" element={<Security_Code />} />
+            <Route path="/new_password" element={<New_Password />} />
           </Routes>
         </div>
       </div>

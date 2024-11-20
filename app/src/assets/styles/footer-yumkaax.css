@@ -1,0 +1,20 @@
+/* Sidebar - Contendor de la imagen YumKaax*/
+.sidebar-footer {
+    padding: 5px; 
+    text-align: center; 
+    border-top: 1px solid var(--color-uacam-secondary-light);
+    margin-top: auto; 
+  }
+  
+  .footer-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .footer-text {
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--color-uacam-primary);
+    font-weight: 600;
+  }
+  

@@ -1,0 +1,47 @@
+/* Header */
+header{
+    width: 100%; 
+    height: 70px; /* 80 Equivale a 5rem y 70 a 3.375rem*/
+    background: var(--color-uacam-white);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+  }
+  
+  header .part2{
+    padding-left: 25px !important;
+  }
+  
+  header .logo{
+    text-decoration: none;
+  }
+  
+  header .logo img{
+    width: 190px;
+  }
+  
+  header .logo span{
+    color: var(--color-uacam-black);
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
+  /* Botón circular de menú y otros */
+  header button.rounded-circle{
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--color-uacam-background-light);
+  }
+  
+  header button.rounded-circle svg{
+    color: var(--color-uacam-primary); 
+    font-size: 18px;
+    transition: all 0.4s;
+  }
+  
+  header button.rounded-circle svg:hover{
+    color: var(--color-uacam-datatext) !important; 
+  }
+  

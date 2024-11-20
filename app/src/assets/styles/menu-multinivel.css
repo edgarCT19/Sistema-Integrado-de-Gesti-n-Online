@@ -1,0 +1,121 @@
+/* Sidebar -> ul y li (Menus) */
+.main .sidebarWrapper .sidebar ul {
+    margin-bottom: 0px;
+    padding: 5px 1px;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li {
+    list-style: none;
+  }
+  
+  /* Estilos para enlaces en lugar de botones */
+  .main .sidebarWrapper .sidebar ul li a {
+    text-align: left;
+    color: var(--color-uacam-primary);
+    display: flex; 
+    justify-content: flex-start; 
+    border-radius: 7px;
+    padding: 6px 10px; 
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Soberana Sans Regular", sans-serif;
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+    margin-top: 2px;
+    align-items: center;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Efecto hover */
+  }
+  
+  .main .sidebarWrapper .sidebar ul li a .icon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li a .icon svg {
+    color: var(--color-uacam-primary);
+    font-size: 22px;
+    opacity: 0.6;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .arrow {
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Sidebar Submenú */
+  .main .sidebarWrapper .sidebar ul li .submenu {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--color-uacam-secondary-light); /* Barra lateral */
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .submenu.show {
+    max-height: 300px; /* Ajusta el tamaño máximo según la cantidad de elementos */
+    opacity: 1;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .submenu li {
+    list-style: none;
+    margin-top: 0px;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .submenu li a {
+    font-size: 13px;
+    padding: 6px 10px; 
+    align-items: center;
+    color: var(--color-uacam-primary);
+    justify-content: left;
+    border-radius: 7px; 
+    text-decoration: none; 
+  }
+  
+  .main .sidebarWrapper .sidebar ul li a.active {
+    background-color: var(--color-uacam-background-light);
+    color: var(--color-uacam-primary);
+    font-weight: bold; 
+    border-radius: 5px;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .arrow {
+    transition: transform 0.4s ease;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .arrow.rotate {
+    transform: rotate(90deg);
+  }
+  
+  /* Sidebar Submenú - Submenú */
+  .main .sidebarWrapper .sidebar ul li .submenu-submenu {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.6s;
+    border-left: 1px solid var(--color-uacam-secondary-light); /* Barra lateral */
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .submenu-submenu li {
+    list-style: none;
+    margin-top: 1px;
+  }
+  
+  .main .sidebarWrapper .sidebar ul li .submenu-submenu li a {
+    font-size: 13px;
+    padding: 6px 10px;
+    color: var(--color-uacam-primary);
+    border-radius: 7px;
+    text-decoration: none;
+    align-items: center; 
+  }
+  

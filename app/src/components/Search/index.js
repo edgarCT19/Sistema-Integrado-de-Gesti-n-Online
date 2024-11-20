@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
+import { FaEraser } from "react-icons/fa";
+import  Tooltip  from "@mui/material/Tooltip";
 
 const Search = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -7,7 +10,12 @@ const Search = ({ onSearch }) => {
   const handleSearchChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-    onSearch(value);  // Llamamos la función onSearch que se pasará como prop desde el componente principal
+    onSearch(value); // Llamamos la función onSearch que se pasará como prop desde el componente principal
+  };
+
+  const clearSearch = () => {
+    setSearchTerm("");
+    onSearch(""); // Limpia también los resultados
   };
 
   return (
@@ -17,8 +25,15 @@ const Search = ({ onSearch }) => {
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
-        placeholder="Search here..."
+        placeholder="Buscar..."
       />
+      {searchTerm && (
+       <Tooltip title="Borrar" placement="top">
+        <button className="clear-btn" onClick={clearSearch}>
+          <FaEraser />
+        </button>
+       </Tooltip> 
+      )}
     </div>
   );
 };
