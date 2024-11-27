@@ -129,10 +129,10 @@ const Sidebar = () => {
           </Link>
           <Collapse in={openSubmenu === "facturas"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="/factura_gdmto" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTO</Link></li>
-              <li><Link to="/factura_gdmth" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTH</Link></li>
-              <li><Link to="/factura_gdbt" className="w-100"><span className="icon"><MdArrowRight   /></span>GDBT</Link></li>
-              <li><Link to="/factura_pdbt" className="w-100"><span className="icon"><MdArrowRight   /></span>PDBT</Link></li>
+              <li><Link to="/Tabla_GDMTO" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTO</Link></li>
+              <li><Link to="/Tabla_GDMTH" className="w-100"><span className="icon"><MdArrowRight   /></span>GDMTH</Link></li>
+              <li><Link to="/Tabla_GDBT" className="w-100"><span className="icon"><MdArrowRight   /></span>GDBT</Link></li>
+              <li><Link to="/Tabla_PDBT" className="w-100"><span className="icon"><MdArrowRight   /></span>PDBT</Link></li>
             </ul>
           </Collapse>
         </li>
