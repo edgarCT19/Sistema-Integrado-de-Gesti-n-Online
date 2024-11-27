@@ -29,6 +29,7 @@ import Area from "./pages/UR/Area";
 import Edificio from "./pages/UR/Edificio";
 import Unidad from "./pages/UR/Unidad";
 import Subestaciones from "./pages/Subestaciones";
+import Loading from "./components/Loading";
 
 function AppContent() {
   const location = useLocation();
@@ -36,7 +37,8 @@ function AppContent() {
     location.pathname === "/login" ||
     location.pathname === "/reset-password" ||
     location.pathname === "/code-security" ||
-    location.pathname === "/new_password";
+    location.pathname === "/new_password" ||
+    location.pathname === "/cargando";
 
   return (
     <>
@@ -73,6 +75,7 @@ function AppContent() {
             <Route path="/reset-password" element={<Email_Pass_Reset />} />
             <Route path="/code-security" element={<Security_Code />} />
             <Route path="/new_password" element={<New_Password />} />
+            <Route path="/cargando" element={<Loading></Loading>}></Route>
           </Routes>
         </div>
       </div>

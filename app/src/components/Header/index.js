@@ -66,7 +66,7 @@ const Header = () => {
               </Tooltip>
 
               <Tooltip title="Ir a Whatsapp">
-                <Link to={"https://wa.me/<numero>"}>
+                <Link to={"https://wa.me"}>
                   <Button variant="text" className="rounded-circle">
                     {" "}
                     <FaWhatsapp />{" "}
@@ -75,7 +75,7 @@ const Header = () => {
               </Tooltip>
 
               <Tooltip title="Ir a Gmail">
-                <Link to={"mailto:<email>?subject=Asunto&body=Cuerpo%20del%20correo"}>
+                <Link to={"https://mail.google.com/"}>
                   <Button variant="text" className="rounded-circle mx-2">
                     {" "}
                     <BiLogoGmail />{" "}
