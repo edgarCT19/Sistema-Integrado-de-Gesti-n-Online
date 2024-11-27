@@ -29,6 +29,11 @@ import Area from "./pages/UR/Area";
 import Edificio from "./pages/UR/Edificio";
 import Unidad from "./pages/UR/Unidad";
 import Subestaciones from "./pages/Subestaciones";
+import Tabla_GDMTO from "./pages/Facturas/GDMTO";
+import Tabla_GDBT from "./pages/Facturas/GDBT";
+import Tabla_GDMTH from "./pages/Facturas/GDMTH";
+import Tabla_PDBT from "./pages/Facturas/PDBT";
+
 
 function AppContent() {
   const location = useLocation();
@@ -62,8 +67,14 @@ function AppContent() {
             <Route path="/usuarios" element={<Users />} />
             <Route path="/usuarios_baja" element={<Users_Inactivos />} />
             <Route path="/agregar_usuario" element={<Add_User />} />
+                {/* tarifas*/}
             <Route path="/tarifas" element={<Tarifa />} />
             <Route path="/agregar_tarifa" element={<Add_TAR />} />
+                {/* Facturas */}
+            <Route path="/Tabla_GDMTO" element={<Tabla_GDMTO />} />
+            <Route path="/Tabla_GDMTH" element={<Tabla_GDMTH />} />
+            <Route path="/Tabla_GDBT" element={<Tabla_GDBT/>} />
+            <Route path="/Tabla_PDBT" element={<Tabla_PDBT />} />
             <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
             <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />} />
             <Route path="/area" element={<Area />} />
