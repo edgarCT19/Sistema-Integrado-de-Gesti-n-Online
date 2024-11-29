@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   TextField,
@@ -11,11 +11,43 @@ import {
   Box,
   Divider
 } from "@mui/material";
+import Loading from "../../../components/Loading"; // Importa el componente Loading
 
 const Add_AA = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Simular proceso de guardar datos
+    setTimeout(() => {
+      setLoading(false);
+      alert("Datos guardados correctamente.");
+    }, 2000); // Simula un tiempo de espera de 2 segundos
+  };
+
   return (
     <div className="right-content">
-      <div className="card">
+      <div className="card" style={{ position: "relative" }}>
+        {loading && ( // Mostrar Loading mientras el estado sea true
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              zIndex: 10
+            }}
+          >
+            <Loading />
+          </Box>
+        )}
         <Typography variant="h5" gutterBottom className="p-3">
           Agregar Aire Acondicionado
         </Typography>
@@ -23,6 +55,7 @@ const Add_AA = () => {
           component="form"
           noValidate
           autoComplete="off"
+          onSubmit={handleSubmit} // Manejar el evento de envío
           sx={{
             padding: 3,
             display: "flex",
@@ -46,8 +79,8 @@ const Add_AA = () => {
           }}
         >
           <Grid container spacing={3}>
-            {/* Agrupación de Ubicación */}
-            <Grid item xs={12}>
+ {/* Agrupación de Ubicación */}
+ <Grid item xs={12}>
               <Typography variant="h6" gutterBottom>
                 Información de Ubicación
               </Typography>
@@ -186,14 +219,18 @@ const Add_AA = () => {
             </Grid>
           </Grid>
 
-          {/* Botón de enviar centrado y largo */}
           <Box display="flex" justifyContent="center" mt={3}>
             <Button
               type="submit"
               variant="contained"
-              sx={{ width: "50%", backgroundColor: "var(--color-uacam-primary)", '&:hover': { backgroundColor: "var(--color-uacam-primary)" } }}
+              disabled={loading} // Deshabilitar el botón mientras carga
+              sx={{
+                width: "50%",
+                backgroundColor: "var(--color-uacam-primary)",
+                "&:hover": { backgroundColor: "var(--color-uacam-primary)" }
+              }}
             >
-              Guardar datos
+              {loading ? "Guardando..." : "Guardar datos"}
             </Button>
           </Box>
         </Box>

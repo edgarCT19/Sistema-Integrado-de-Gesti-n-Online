@@ -8,6 +8,8 @@
 @import 'assets/styles/menu-multinivel.css';
 @import 'assets/styles/tabla.css';
 @import 'assets/styles/tabla-indicadores.css';
+@import 'assets/styles/loading.css';
+
 
 /* Estilos predeterminados del sistema*/
 *{margin: 0px; padding: 0px;}
