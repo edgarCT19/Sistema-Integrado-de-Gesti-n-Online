@@ -1,0 +1,90 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button, IconButton, Stack, Tooltip } from "@mui/material";
+import { AddCircleOutline as AddCircleOutlineIcon, Edit as EditIcon, Delete as DeleteIcon } from "@mui/icons-material";
+import '../PDBT/./app.css'
+const FacturaRow = ({ mes }) => (
+  <tr>
+    <td>{mes}</td>
+    <td>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="icon-large"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+        />
+      </svg>
+    </td>
+    <td className="actions-cell">
+      <Stack direction="row" spacing={1} justifyContent="center">
+        <Tooltip title="Editar" placement="top">
+          <IconButton aria-label="edit" size="small" color="primary">
+            <EditIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Eliminar" placement="top">
+          <IconButton aria-label="delete" size="small" color="error">
+            <DeleteIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
+      </Stack>
+    </td>
+  </tr>
+);
+
+const Tabla_PDBT = () => {
+  const facturas = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre"
+   , "Noviembre", "Diciembre"
+  ]; // Puedes expandir esta lista según sea necesario.
+
+  return (
+    <div className="w-100 right-content">
+      <div className="card">
+        <div className="table-header d-flex justify-content-end align-items-center mt-2 mb-3 p-2">
+          <Link to="/agregar_Factura">
+            <Button
+              variant="contained"
+              color="success"
+              endIcon={<AddCircleOutlineIcon />}
+            >
+              Agregar
+            </Button>
+          </Link>
+        </div>
+
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="table-container">
+            <table className="styled-table text-center">
+              <thead>
+                <tr>
+                  <th colSpan="3" className="table-title text-center">
+                    Facturas 2019
+                  </th>
+                </tr>
+                <tr>
+                  <th className="table-title text-center">Periodo</th>
+                  <th className="table-title text-center">Archivo</th>
+                  <th className="table-title text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {facturas.map((mes, index) => (
+                  <FacturaRow key={index} mes={mes} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Tabla_PDBT;

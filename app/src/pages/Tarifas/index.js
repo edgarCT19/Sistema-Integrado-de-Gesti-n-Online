@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Tooltip from "@mui/material/Tooltip";
+import { ImportContacts } from "@mui/icons-material";
 
 const Tarifa = () => {
   return (
