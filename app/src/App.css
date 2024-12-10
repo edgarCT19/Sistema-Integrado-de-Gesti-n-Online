@@ -92,3 +92,22 @@ a:hover {
   border-color: var(--color-uacam-datatext);
 }
 
+/*gestion ambiental*/
+
+.distribucionlabel{
+  display: flex;
+}
+
+.logouac{
+  width: 50px;
+height: 60px;
+}
+
+.logosustentable {
+  width: 50px;
+height: 60px;
+}
+
+.fondocard{
+  background: white;
+}

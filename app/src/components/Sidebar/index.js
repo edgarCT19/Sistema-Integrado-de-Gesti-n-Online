@@ -200,8 +200,8 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RP"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora mensual-RP</Link></li>
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora de almacenamiento temporal-RP</Link></li>
+              <li><Link to="bitacora_mensual_rp" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora mensual-RP</Link></li>
+              <li><Link to="bitacora_mensual_temporal" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora de almacenamiento temporal-RP</Link></li>
             </ul>
             </Collapse>
           </li>
@@ -214,8 +214,8 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RPBI"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora generacion - RPBI</Link></li>
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora recoleta - RPBI</Link></li>
+              <li><Link to="bitacora_gen_rpbi" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora generacion - RPBI</Link></li>
+              <li><Link to="bitacora_reco_rpbi" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácora recoleta - RPBI</Link></li>
             </ul>
             </Collapse>
           </li>
@@ -228,9 +228,9 @@ const Sidebar = () => {
             </Link>
             <Collapse in={openSubmenu === "Bitacora RSU"} timeout="auto" unmountOnExit>
             <ul className="submenu">
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Registrar centro de acopio - RME</Link></li>
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Disposición en vertedero municipal</Link></li>
-              <li><Link to="" className="w-100"><span className="icon"><MdArrowRight   /></span>Centro de acopio residuos para reuso y/o reciclaje</Link></li>
+              <li><Link to="bitacora_rsume_acopio" className="w-100"><span className="icon"><MdArrowRight   /></span>Registrar centro de acopio - RME</Link></li>
+              <li><Link to="bitacora_rsume_vertedero" className="w-100"><span className="icon"><MdArrowRight   /></span>Disposición en vertedero municipal</Link></li>
+              <li><Link to="bitacora_rsume_reuso" className="w-100"><span className="icon"><MdArrowRight   /></span>Centro de acopio residuos para reuso y/o reciclaje</Link></li>
             </ul>
             </Collapse>
           </li>

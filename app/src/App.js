@@ -33,6 +33,13 @@ import Tabla_GDMTO from "./pages/Facturas/GDMTO";
 import Tabla_GDBT from "./pages/Facturas/GDBT";
 import Tabla_GDMTH from "./pages/Facturas/GDMTH";
 import Tabla_PDBT from "./pages/Facturas/PDBT";
+import Bitacora_rp from "./pages/Bitacoras/RP"; //Listo
+import Bitacora_temporal from "./pages/Bitacoras/RP/temporal"; // Listo
+import Bitacora_rpbi from "./pages/Bitacoras/RPBI";
+import Bitacora_rpbi_reco from "./pages/Bitacoras/RPBI/recolecta_rpbi";
+import Bitacora_rsume_acopio from "./pages/Bitacoras/RSUME/index";
+import Bitacora_rsume_vertedero from "./pages/Bitacoras/RSUME/dvm";
+import Bitacora_rsume_reuso from "./pages/Bitacoras/RSUME/carpr";
 
 import Loading from "./components/Loading";
 
@@ -87,6 +94,13 @@ function AppContent() {
             <Route path="/code-security" element={<Security_Code />} />
             <Route path="/new_password" element={<New_Password />} />
             <Route path="/cargando" element={<Loading></Loading>}></Route>
+            <Route path="/bitacora_mensual_rp" element={<Bitacora_rp />} />
+            <Route path="/bitacora_mensual_temporal" element={<Bitacora_temporal />} />
+            <Route path="/bitacora_gen_rpbi" element={<Bitacora_rpbi />} />
+            <Route path="/bitacora_reco_rpbi" element={<Bitacora_rpbi_reco />} />
+            <Route path="/bitacora_rsume_acopio" element={<Bitacora_rsume_acopio />} />
+            <Route path="/bitacora_rsume_vertedero" element={<Bitacora_rsume_vertedero />} />
+            <Route path="/bitacora_rsume_reuso" element={<Bitacora_rsume_reuso />} />
           </Routes>
         </div>
       </div>
