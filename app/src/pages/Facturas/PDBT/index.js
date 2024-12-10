@@ -181,8 +181,13 @@ const TablaPDBT = () => {
           <div className="table-container">
             <table className="styled-table text-center">
               <thead>
+              <tr>
+                  <th colSpan="16" className="table-title text-center">
+                    Historial PDBT
+                  </th>
+                </tr>
                 <tr>
-                  <th>Mes</th>
+                  <th>Periodo</th>
                   <th>Archivo</th>
                   <th>Historial PDBT</th>
                   <th>Subestaciones</th>
