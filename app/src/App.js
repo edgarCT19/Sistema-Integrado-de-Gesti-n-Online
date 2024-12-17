@@ -94,13 +94,13 @@ function AppContent() {
             <Route path="/code-security" element={<Security_Code />} />
             <Route path="/new_password" element={<New_Password />} />
             <Route path="/cargando" element={<Loading></Loading>}></Route>
-            <Route path="/bitacora_mensual_rp" element={<Bitacora_rp />} />
-            <Route path="/bitacora_mensual_temporal" element={<Bitacora_temporal />} />
-            <Route path="/bitacora_gen_rpbi" element={<Bitacora_rpbi />} />
-            <Route path="/bitacora_reco_rpbi" element={<Bitacora_rpbi_reco />} />
-            <Route path="/bitacora_rsume_acopio" element={<Bitacora_rsume_acopio />} />
-            <Route path="/bitacora_rsume_vertedero" element={<Bitacora_rsume_vertedero />} />
-            <Route path="/bitacora_rsume_reuso" element={<Bitacora_rsume_reuso />} />
+            <Route path="/Bitacora_mensual_rp" element={<Bitacora_rp />} />
+            <Route path="/Bitacora_mensual_temporal" element={<Bitacora_temporal />} />
+            <Route path="/Bitacora_gen_rpbi" element={<Bitacora_rpbi />} />
+            <Route path="/Bitacora_reco_rpbi" element={<Bitacora_rpbi_reco />} />
+            <Route path="/Bitacora_rsume_acopio" element={<Bitacora_rsume_acopio />} />
+            <Route path="/Bitacora_rsume_vertedero" element={<Bitacora_rsume_vertedero />} />
+            <Route path="/Bitacora_rsume_reuso" element={<Bitacora_rsume_reuso />} />
           </Routes>
         </div>
       </div>

@@ -8,11 +8,16 @@ import { Button } from "@mui/material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Tooltip from "@mui/material/Tooltip";
 import "bootstrap/dist/css/bootstrap.min.css";
+//import {Link} from "react-router-dom";
+import {useForm} from "react-hook-form";
 
-const bitacora_mensual_rp = () => {
-   
+function Bitacora_mensual_rp () {
+    const {register, formState:{errors}, handleSubmit} = useForm();
+    const onSubmit=(data)=>{
+        console.log(data);
+    }
     return (
-
+        <React.Fragment>
         <div className="w-100 right-content">
             <div className="card">
             <center><h5>BITACORA PARA REGISTRAR LA GENERACION MENSUAL DE RESIDIOS PELIGROSOS</h5></center>
@@ -155,67 +160,72 @@ const bitacora_mensual_rp = () => {
                             <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar bitacora </h1>
+                                
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Area</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <br></br>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Laboratorio</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <br></br>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" placeholder="DD/MM/AAAA HH:MM" aria-describedby="inputGroup-sizing-sm"></input>
-                            </div>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Residuo</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
-                            </div>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Estado Fisico</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
-                            </div>
-                            <div class="input-group input-group-sm mb-3">
-                                
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
-                            </div> 
-                            <label for="exampleFormControlInput1" class="form-label">CRETI</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Ninguno Seleccionado</option>
-                                <option value="1">Corrosivo</option>
-                                <option value="2">Reactivo</option>
-                                <option value="3">Explosivo</option>
-                                <option value="3">Toxico</option>
-                                <option value="3">Inflamable</option>
-                            </select>
-                            <br></br>
-                            <label for="exampleFormControlInput1" class="form-label">Tipo de envase</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Ninguno seleccionado</option>
-                                <option value="1">Vidrio</option>
-                                <option value="2">Plastico</option>
-                            </select>
-                            <br></br>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Capacidad y medida</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
-                            </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-success">Guardar</button>
-                            </div>
+                            <form>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Area</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br></br>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Laboratorio</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br></br>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
+                                    <input type="text" {...register("fecha",{required:true})} class="form-control" aria-label="Sizing example input" placeholder="DD/MM/AAAA HH:MM" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <span>
+                                        {errors.name?.type==="Requerido" && "Campo Obligatorio"}
+                                    </span>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Residuo</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Estado Fisico</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                </div> 
+                                <label for="exampleFormControlInput1" class="form-label">CRETI</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Ninguno Seleccionado</option>
+                                    <option value="1">Corrosivo</option>
+                                    <option value="2">Reactivo</option>
+                                    <option value="3">Explosivo</option>
+                                    <option value="3">Toxico</option>
+                                    <option value="3">Inflamable</option>
+                                </select>
+                                <br></br>
+                                <label for="exampleFormControlInput1" class="form-label">Tipo de envase</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Ninguno seleccionado</option>
+                                    <option value="1">Vidrio</option>
+                                    <option value="2">Plastico</option>
+                                </select>
+                                <br></br>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Capacidad y medida</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                </div>
+                                </form>
+                                </div>
                             </div>
                         </div>
                         </div>
@@ -223,7 +233,7 @@ const bitacora_mensual_rp = () => {
                 </div>
             </div>
         </div>
+        </React.Fragment>
     );
 };
-
-export default bitacora_mensual_rp;
+export default Bitacora_mensual_rp;
