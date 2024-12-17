@@ -134,7 +134,7 @@ const Header = () => {
                   transformOrigin={{ horizontal: "right", vertical: "top" }}
                   anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
                 > 
-                  <MenuItem component={Link} to="/" onClick={handleCloseMyAccDr} className="menu-link">
+                  <MenuItem component={Link} to="/perfil" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <HowToRegIcon fontSize="small" />
                     </ListItemIcon>
@@ -146,13 +146,13 @@ const Header = () => {
                     </ListItemIcon>
                     Avisos de privacidad
                   </MenuItem>
-                  <MenuItem component={Link} to="/" onClick={handleCloseMyAccDr} className="menu-link">
+                  <MenuItem component={Link} to="" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <AssignmentLateIcon fontSize="small" />
                     </ListItemIcon>
                     Términos y condiciones
                   </MenuItem>
-                  <MenuItem component={Link} to="/" onClick={handleCloseMyAccDr} className="menu-link">
+                  <MenuItem component={Link} to="/configuracion" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <Settings fontSize="small" />
                     </ListItemIcon>

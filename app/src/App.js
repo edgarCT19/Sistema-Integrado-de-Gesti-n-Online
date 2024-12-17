@@ -35,6 +35,8 @@ import Tabla_GDMTH from "./pages/Facturas/GDMTH";
 import Tabla_PDBT from "./pages/Facturas/PDBT";
 
 import Loading from "./components/Loading";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
 function AppContent() {
   const location = useLocation();
@@ -87,6 +89,8 @@ function AppContent() {
             <Route path="/code-security" element={<Security_Code />} />
             <Route path="/new_password" element={<New_Password />} />
             <Route path="/cargando" element={<Loading></Loading>}></Route>
+            <Route path="/perfil" element={<Profile></Profile>}></Route>
+            <Route path="/configuracion" element={<Settings></Settings>}></Route>
           </Routes>
         </div>
       </div>
