@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -10,11 +10,70 @@ import Tooltip from "@mui/material/Tooltip";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import axios from "axios";
+import { Message } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 function Bitacora_mensual_rp () {
+    const navigate = useNavigate();
     const {register, formState:{errors}, handleSubmit} = useForm();
+
+    const zeroPad = (val) => val.toString().padStart(2, "0"); 
+    // Advertencia, padStart() -> ECMAScript 2017
+    
+    let odate = new Date();
+    
+    let year = odate.getFullYear();
+    let month = zeroPad(odate.getMonth());
+    let day = zeroPad(odate.getDate());
+    let hour = zeroPad(odate.getHours());
+    let mins = zeroPad(odate.getMinutes());
+
+    const [departamento, setDepartamento]=useState([]);
+    const [laboratorio, setLaboratorio]=useState([]);
+    const [agregar, setAgregar] = useState('')
+
+    useEffect(()=> {
+        const getDepartamento = async()=>{
+            const reqData = await fetch("http://localhost:7000/api/departamento");
+            const resData = await reqData.json();
+            setDepartamento(resData);
+        }
+        getDepartamento();
+
+        const getLaboratorio = async()=>{
+            const reqData = await fetch("http://localhost:7000/api/laboratorios");
+            const resData = await reqData.json();
+            setLaboratorio(resData);
+        }
+        getLaboratorio();
+    },[]);
+
+    const handleDepartamento = (e) => {
+        const getDepartamentoid = e.target.value;
+        console.log(getDepartamentoid);
+    }
+
+    const handleLaboratorio = (e) => {
+        const getLaboratorioid = e.target.value;
+        console.log(getLaboratorioid);
+    }
+
     const onSubmit=(data)=>{
         console.log(data);
+
+    const res = axios.post("http://localhost:7000/api/add_bitacora1",data)
+    .then(response=>{setAgregar(response.data);
+    });
+
+    if(!agregar)
+    {
+        setAgregar(()=>{
+            navigate('/inicio')
+        },2000);
+    }else{
+        setAgregar("Ocurrio algo")
+    }
     }
     return (
         <React.Fragment>
@@ -26,6 +85,7 @@ function Bitacora_mensual_rp () {
                 Agregar nueva bitacora 
                 </button>
                 </div>
+                <p className="text-success">{agregar}</p>
                 <div className="d-flex justify-content-center align-items-center">
                     <div className="table-container">
                         <table className="styled-table text-center">
@@ -163,44 +223,57 @@ function Bitacora_mensual_rp () {
                                 
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                            <form>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Area</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                            <div class="modal-body"> {/*Los departamentos cambiaron a dependencias, pero no cambia la BD*/}
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <select name="area" {...register("area",{required:true})} class="form-select" aria-label="Default select example" onChange={handleDepartamento}>
+                                    <option selected>Dependencia</option>
+                                    {
+                                        departamento.map((departamentoitem,index)=>(
+                                            <option value = {departamentoitem.iddepartamento} key={index}>{departamentoitem.nombre}</option>
+                                        ))
+                                    }
                                 </select>
                                 <br></br>
-                                <select class="form-select" aria-label="Default select example">
+                                <select {...register("laboratorio",{required:true})} class="form-select" aria-label="Default select example" onChange={handleLaboratorio}>
                                     <option selected>Laboratorio</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    {
+                                        laboratorio.map((laboratorioitem,index)=>(
+                                            <option value = {laboratorioitem.idlaboratorio} key={index}>{laboratorioitem.nombre_lab}</option>
+                                        ))
+                                    }
                                 </select>
                                 <br></br>
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                    <input type="text" {...register("fecha",{required:true})} class="form-control" aria-label="Sizing example input" placeholder="DD/MM/AAAA HH:MM" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <input  type="text" {...register("fecha",{required:true})} class="form-control" aria-label="Sizing example input" placeholder="DD/MM/AAAA HH:MM" aria-describedby="inputGroup-sizing-sm" value={year+'-'+month+'-'+day+' '+hour+':'+mins+':00'}></input>
                                     <span>
-                                        {errors.name?.type==="Requerido" && "Campo Obligatorio"}
+                                        {errors.fecha?.type==="required" && "Campo Obligatorio"}
                                     </span>
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Residuo</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <input type="text" {...register("residuo",{required:true})} class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <span>
+                                        {errors.residuo?.type==="required" && "Campo Obligatorio"}
+                                    </span>
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Estado Fisico</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <input type="text" {...register("estadofisico",{required:true})} class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <span>
+                                        {errors.estadofisico?.type==="required" && "Campo Obligatorio"}
+                                    </span>
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <input type="text" {...register("cantidad",{required:true})} class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <span>
+                                        {errors.cantidad?.type==="required" && "Campo Obligatorio"}
+                                    </span>
                                 </div> 
                                 <label for="exampleFormControlInput1" class="form-label">CRETI</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select {...register("creti",{required:true})} class="form-select" aria-label="Default select example">
                                     <option selected>Ninguno Seleccionado</option>
                                     <option value="1">Corrosivo</option>
                                     <option value="2">Reactivo</option>
@@ -210,7 +283,7 @@ function Bitacora_mensual_rp () {
                                 </select>
                                 <br></br>
                                 <label for="exampleFormControlInput1" class="form-label">Tipo de envase</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select {...register("envase",{required:true})} class="form-select" aria-label="Default select example">
                                     <option selected>Ninguno seleccionado</option>
                                     <option value="1">Vidrio</option>
                                     <option value="2">Plastico</option>
@@ -218,11 +291,14 @@ function Bitacora_mensual_rp () {
                                 <br></br>
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Capacidad y medida</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <input type="text" {...register("capacidad",{required:true})} class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+                                    <span>
+                                        {errors.capacidad?.type==="required" && "Campo Obligatorio"}
+                                    </span>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                    <button type="submit" className="btn btn-success">Guardar</button>
                                 </div>
                                 </form>
                                 </div>
