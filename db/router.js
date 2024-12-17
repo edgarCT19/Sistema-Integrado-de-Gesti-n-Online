@@ -41,7 +41,7 @@ Router.post("/api/add_bitacora1", (req, res)=>{
     const envase = req.body.envase;
     const capacidad = req.body.capacidad;
 
-    var sql_addbit1 = `INSERT INTO bitacora_mensual_residuos (idbitacora_mensual_residuos, laboratorio_idlaboratorio, fecha ,residuo, cantidad, creti, estadofisico, tipoenvase, capacidad) VALUES (default, "${id_dependencia}","${id_laboratorio}","${fecha}","${residuo}","${cantidad}","${creti}","${estadofisico})","${envase}","${capacidad}`;
+    var sql_addbit1 = `INSERT INTO bitacora_mensual_residuos (idbitacora_mensual_residuos, departamento_iddepartamento, laboratorio_idlaboratorio, fecha ,residuo, cantidad, creti, estadofisico, tipoenvase, capacidad) VALUES (default, "${id_dependencia}","${id_laboratorio}","${fecha}","${residuo}","${cantidad}","${creti}","${estadofisico})","${envase}","${capacidad}")`;
 
     sqlconnect .query(sql_addbit1, (err, result)=>{
         if(!err){
