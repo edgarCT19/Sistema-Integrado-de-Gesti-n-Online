@@ -37,6 +37,7 @@ import Tabla_PDBT from "./pages/Facturas/PDBT";
 import Loading from "./components/Loading";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import BitacoraUE from "./pages/Reports/Bitacoras";
 
 function AppContent() {
   const location = useLocation();
@@ -68,6 +69,7 @@ function AppContent() {
             <Route path="/agregar_Luminaria" element={<Add_Luminaria />} />
             <Route path="/Miscelaneos" element={<Inventario_Miscelaneos />} />
             <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />} />
+            <Route path="/bitacora_de_uso_eficiente" element={<BitacoraUE />}></Route>
             <Route path="/usuarios" element={<Users />} />
             <Route path="/usuarios_baja" element={<Users_Inactivos />} />
             <Route path="/agregar_usuario" element={<Add_User />} />

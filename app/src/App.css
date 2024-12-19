@@ -27,6 +27,7 @@
     --color-uacam-datatext: #1976d2;
     --color-uacam-background-light: #f0f5ff;
     --color-uacam-secondary-light:#d7dbdd ;
+    --color-uacam-bitacora: #797d7f;
   }
 
 /* Body */
@@ -92,3 +93,9 @@ a:hover {
   border-color: var(--color-uacam-datatext);
 }
 
+.right-content .contentWrraperSelect{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}

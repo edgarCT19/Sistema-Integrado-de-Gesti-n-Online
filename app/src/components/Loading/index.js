@@ -1,16 +1,10 @@
 import React from "react";
-import { IoIosFlash } from "react-icons/io";
-import { BsHeartPulseFill } from "react-icons/bs";
-import { FaLeaf } from "react-icons/fa";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Loading = () => {
   return (
     <div class="loading-container">
-      <div class="cargando">
-        <div class="pelotas"><IoIosFlash /></div>
-        <div class="pelotas"><FaLeaf /></div>
-        <div class="pelotas"><BsHeartPulseFill /></div>
-      </div>
+      <CircularProgress />
     </div>
   );
 };
