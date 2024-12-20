@@ -38,6 +38,8 @@ import Loading from "./components/Loading";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import BitacoraUE from "./pages/Reports/Bitacoras";
+import Analithycs_Energy from "./pages/Reports/Bitacoras/analisisConsumo";
+import GlobalIndicator from "./pages/Indicadores/IndicadorGlobal";
 
 function AppContent() {
   const location = useLocation();
@@ -62,14 +64,27 @@ function AppContent() {
             {/* Redirigir raíz al login */}
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
+            {/* Reset password */}
+            <Route path="/reset-password" element={<Email_Pass_Reset />} />
+            <Route path="/code-security" element={<Security_Code />} />
+            <Route path="/new_password" element={<New_Password />} />
+            {/* Homepages y/o páginas de inicio */}
             <Route path="/Inicio" element={<Dashboard />} />
+            {/* Inventarios */}
             <Route path="/Aires_Acondicionados" element={<Inventario_AA />} />
             <Route path="/agregar_AA" element={<Add_AA />} />
+
             <Route path="/Luminarias" element={<Inventario_Luminarias />} />
             <Route path="/agregar_Luminaria" element={<Add_Luminaria />} />
+
             <Route path="/Miscelaneos" element={<Inventario_Miscelaneos />} />
             <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />} />
-            <Route path="/bitacora_de_uso_eficiente" element={<BitacoraUE />}></Route>
+            {/* Historial o bitacora de inventarios */}
+            <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
+            {/* Reportes */}
+            <Route path="/bitacora_de_uso_eficiente" element={<BitacoraUE />} />
+            <Route path="/analisis_de_consumo" element={<Analithycs_Energy></Analithycs_Energy>} />
+            {/* Altas y bajas de usuarios */}
             <Route path="/usuarios" element={<Users />} />
             <Route path="/usuarios_baja" element={<Users_Inactivos />} />
             <Route path="/agregar_usuario" element={<Add_User />} />
@@ -81,15 +96,16 @@ function AppContent() {
             <Route path="/Tabla_GDMTH" element={<Tabla_GDMTH />} />
             <Route path="/Tabla_GDBT" element={<Tabla_GDBT/>} />
             <Route path="/Tabla_PDBT" element={<Tabla_PDBT />} />
-            <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
+            {/* Indicadores */}
             <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />} />
+            <Route path="/Indicadores_globales" element={<GlobalIndicator />} />
+            {/* Unidad Responsable */}
             <Route path="/area" element={<Area />} />
             <Route path="/edificio" element={<Edificio />} />
             <Route path="/unidad_responsable" element={<Unidad />} />
+            {/* Subestaciones */}
             <Route path="/subestaciones" element={<Subestaciones />} />
-            <Route path="/reset-password" element={<Email_Pass_Reset />} />
-            <Route path="/code-security" element={<Security_Code />} />
-            <Route path="/new_password" element={<New_Password />} />
+
             <Route path="/cargando" element={<Loading></Loading>}></Route>
             <Route path="/perfil" element={<Profile></Profile>}></Route>
             <Route path="/configuracion" element={<Settings></Settings>}></Route>

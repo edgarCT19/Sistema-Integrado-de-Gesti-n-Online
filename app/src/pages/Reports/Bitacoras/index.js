@@ -2,6 +2,8 @@ import React from "react";
 import SelectUR from "../../../components/SelectUR";
 import Button from '@mui/material/Button';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
+import { Link } from "react-router-dom";
 
 const BitacoraUE = () => {
     return(
@@ -20,9 +22,11 @@ const BitacoraUE = () => {
                 <div class="row text-center" style={{gap:"25px"}}>
                     <div class="col-sm-6 col-md"><SelectUR></SelectUR></div>
                     <div class="col-6 col-md-4">
-                        <Button className="" variant="contained" endIcon={<InsertDriveFileIcon />}>
-                           Generar reporte
-                        </Button>
+                        <Link to="/analisis_de_consumo">
+                            <Button className="" variant="contained" endIcon={<EqualizerIcon />}>
+                            Ver análisis de consumo
+                            </Button>
+                        </Link>
                     </div>
                 </div>
               </div>

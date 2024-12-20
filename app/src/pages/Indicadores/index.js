@@ -7,6 +7,9 @@ const Indicadores_inventarios = () => {
   return (
     <>
       <div className="right-content w-100">
+        <div className="indicator-section-title justify-content-center d-flex">
+              Indicadores de inventarios energéticos
+        </div>
         <div className="card">
           <div className="table-header d-flex justify-content-end align-items-center mt-2 mb-3 p-2">
            <SelectUR></SelectUR>
