@@ -218,7 +218,7 @@ const Inventario_AA = () => {
             <table className="styled-table text-center">
               <thead>
                 <tr>
-                  <th colSpan="15" className="table-title text-center">
+                  <th colSpan="15" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
                     Tabla de Aires Acondicionados
                   </th>
                 </tr>

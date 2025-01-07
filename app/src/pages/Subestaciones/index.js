@@ -59,7 +59,7 @@ const Subestaciones = () => {
             <div className="card">
                 <div className="table-header d-flex justify-content-end align-items-center mt-2 mb-3 p-2">
                     <Search onSearch={handleSearch} /> {/* Pasamos la función de búsqueda al componente Search */}
-                    <Link to="#">
+                    <Link to="/agegar_subestacion">
                         <Button
                             variant="contained"
                             className=" mx-2"
@@ -75,7 +75,7 @@ const Subestaciones = () => {
                         <table className="styled-table text-center">
                             <thead>
                                 <tr>
-                                    <th colSpan="7" className="table-title text-center">Subestaciones</th>
+                                    <th colSpan="7" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>Subestaciones</th>
                                 </tr>
                                 <tr className="text-center">
                                     <th>ID</th>

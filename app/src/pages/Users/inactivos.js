@@ -64,7 +64,7 @@ const Users_Inactivos = () => {
             <table className="styled-table text-center">
               <thead>
                 <tr>
-                  <th colSpan="12" className="table-title text-center">
+                  <th colSpan="12" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
                     Tabla de Usuarios del Sistema / Bajas
                   </th>
                 </tr>

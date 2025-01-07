@@ -21,7 +21,7 @@ const Tarifa = () => {
               color="success"
               endIcon={<AddCircleOutlineIcon />}
             >
-              Agregar
+              Agregar nueva tarifa
             </Button>
           </Link>
         </div>
@@ -31,7 +31,7 @@ const Tarifa = () => {
             <table className="styled-table text-center">
               <thead>
                 <tr>
-                  <th colSpan="3" className="table-title text-center">
+                  <th colSpan="3" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
                     Tabla de Tarifas
                   </th>
                 </tr>

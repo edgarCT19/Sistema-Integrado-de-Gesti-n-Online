@@ -40,6 +40,11 @@ import Settings from "./pages/Settings";
 import BitacoraUE from "./pages/Reports/Bitacoras";
 import Analithycs_Energy from "./pages/Reports/Bitacoras/analisisConsumo";
 import GlobalIndicator from "./pages/Indicadores/IndicadorGlobal";
+import Periodo_nuevo_inventario from "./pages/Inventarios/Historial/form_add";
+import Add_UR from "./pages/UR/Unidad/form_add";
+import Add_Edificio from "./pages/UR/Edificio/form_add";
+import Add_Area from "./pages/UR/Area/form_add";
+import Add_Subestacion from "./pages/Subestaciones/add_form";
 
 function AppContent() {
   const location = useLocation();
@@ -81,17 +86,18 @@ function AppContent() {
             <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />} />
             {/* Historial o bitacora de inventarios */}
             <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
+            <Route path="/nuevo_periodo_de_inventario" element={<Periodo_nuevo_inventario></Periodo_nuevo_inventario>} />
             {/* Reportes */}
             <Route path="/bitacora_de_uso_eficiente" element={<BitacoraUE />} />
-            <Route path="/analisis_de_consumo" element={<Analithycs_Energy></Analithycs_Energy>} />
+            <Route path="/analisis_de_consumo" element={<Analithycs_Energy />} />
             {/* Altas y bajas de usuarios */}
             <Route path="/usuarios" element={<Users />} />
             <Route path="/usuarios_baja" element={<Users_Inactivos />} />
             <Route path="/agregar_usuario" element={<Add_User />} />
-                {/* tarifas*/}
+            {/* tarifas*/}
             <Route path="/tarifas" element={<Tarifa />} />
             <Route path="/agregar_tarifa" element={<Add_TAR />} />
-                {/* Facturas */}
+            {/* Facturas */}
             <Route path="/Tabla_GDMTO" element={<Tabla_GDMTO />} />
             <Route path="/Tabla_GDMTH" element={<Tabla_GDMTH />} />
             <Route path="/Tabla_GDBT" element={<Tabla_GDBT/>} />
@@ -100,12 +106,19 @@ function AppContent() {
             <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />} />
             <Route path="/Indicadores_globales" element={<GlobalIndicator />} />
             {/* Unidad Responsable */}
+            {/* Area */}
             <Route path="/area" element={<Area />} />
+            <Route path="/agregar_area" element={<Add_Area />} />
+            {/* Area */}
             <Route path="/edificio" element={<Edificio />} />
+            <Route path="/agregar_edificio" element={<Add_Edificio />} />
+            {/* Area */}
             <Route path="/unidad_responsable" element={<Unidad />} />
+            <Route path="/unidad" element={<Add_UR />} />
             {/* Subestaciones */}
             <Route path="/subestaciones" element={<Subestaciones />} />
-
+            <Route path="/agegar_subestacion" element={<Add_Subestacion />} />
+            {/* Otros componentes */}
             <Route path="/cargando" element={<Loading></Loading>}></Route>
             <Route path="/perfil" element={<Profile></Profile>}></Route>
             <Route path="/configuracion" element={<Settings></Settings>}></Route>

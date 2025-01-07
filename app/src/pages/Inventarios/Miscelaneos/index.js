@@ -141,7 +141,7 @@ const Inventario_Miscelaneos = () => {
             <table className="styled-table text-center">
               <thead>
                 <tr>
-                  <th colSpan="14" className="table-title text-center">
+                  <th colSpan="14" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
                     Tabla de Misceláneos
                   </th>
                 </tr>

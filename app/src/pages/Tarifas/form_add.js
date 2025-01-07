@@ -13,7 +13,7 @@ const Add_TAR = () => {
     <div className="right-content">
       <div className="card">
         <Typography variant="h5" gutterBottom className="p-3">
-          Agregar Nueva Tarifa
+          Agregar nueva Tarifa
         </Typography>
         <Box
           component="form"
@@ -65,7 +65,7 @@ const Add_TAR = () => {
               </Typography>
               <Divider sx={{ marginBottom: 2 }} />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} >
               <TextField
                 required
                 label="Descripción"
