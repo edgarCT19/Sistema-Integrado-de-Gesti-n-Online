@@ -73,7 +73,6 @@ const Sidebar = () => {
             <ul className="submenu">
               <li><Link to="/unidad_responsable" className="w-100"><span className="icon"><MdArrowRight   /></span>Unidad</Link></li>
               <li><Link to="/edificio" className="w-100"><span className="icon"><MdArrowRight   /></span>Edificio</Link></li>
-              <li><Link to="/nivel" className="w-100"><span className="icon"><MdArrowRight   /></span>Nivel</Link></li>
               <li><Link to="/area" className="w-100"><span className="icon"><MdArrowRight   /></span>Área</Link></li>
             </ul>
           </Collapse>
