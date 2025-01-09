@@ -45,6 +45,7 @@ import Add_UR from "./pages/UR/Unidad/form_add";
 import Add_Edificio from "./pages/UR/Edificio/form_add";
 import Add_Area from "./pages/UR/Area/form_add";
 import Add_Subestacion from "./pages/Subestaciones/add_form";
+import Linea_Base from "./pages/LineaBase";
 
 function AppContent() {
   const location = useLocation();
@@ -118,6 +119,8 @@ function AppContent() {
             {/* Subestaciones */}
             <Route path="/subestaciones" element={<Subestaciones />} />
             <Route path="/agegar_subestacion" element={<Add_Subestacion />} />
+            {/* Linea base */}
+            <Route path="/lineas_base" element={<Linea_Base />} />
             {/* Otros componentes */}
             <Route path="/cargando" element={<Loading></Loading>}></Route>
             <Route path="/perfil" element={<Profile></Profile>}></Route>
