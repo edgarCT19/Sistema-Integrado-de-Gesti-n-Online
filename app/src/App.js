@@ -46,6 +46,9 @@ import Add_Edificio from "./pages/UR/Edificio/form_add";
 import Add_Area from "./pages/UR/Area/form_add";
 import Add_Subestacion from "./pages/Subestaciones/add_form";
 import Linea_Base from "./pages/LineaBase";
+import Capturista from "./pages/Dashboard/index_capturista";
+import ResponsableUR from "./pages/Dashboard/index_responsableUR";
+import Lector from "./pages/Dashboard/index_lector";
 
 function AppContent() {
   const location = useLocation();
@@ -76,6 +79,9 @@ function AppContent() {
             <Route path="/new_password" element={<New_Password />} />
             {/* Homepages y/o páginas de inicio */}
             <Route path="/Inicio" element={<Dashboard />} />
+            <Route path="/Inicio_CD" element={<Capturista />} ></Route>
+            <Route path="/Inicio_UR" element={<ResponsableUR />} ></Route>
+            <Route path="/Inicio_L" element={<Lector />} ></Route>
             {/* Inventarios */}
             <Route path="/Aires_Acondicionados" element={<Inventario_AA />} />
             <Route path="/agregar_AA" element={<Add_AA />} />
@@ -110,10 +116,10 @@ function AppContent() {
             {/* Area */}
             <Route path="/area" element={<Area />} />
             <Route path="/agregar_area" element={<Add_Area />} />
-            {/* Area */}
+            {/* Edificio */}
             <Route path="/edificio" element={<Edificio />} />
             <Route path="/agregar_edificio" element={<Add_Edificio />} />
-            {/* Area */}
+            {/* UR */}
             <Route path="/unidad_responsable" element={<Unidad />} />
             <Route path="/unidad" element={<Add_UR />} />
             {/* Subestaciones */}

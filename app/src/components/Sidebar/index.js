@@ -149,14 +149,14 @@ const Sidebar = () => {
               <li>
                 <Link to="#" className="w-100" onClick={() => toggleNestedSubmenu("reporte5")}>
                 <span className="icon"><MdArrowRight   /></span>
-                  Reporte ##
+                  Homepages
                   <span className={`arrow ${openNestedSubmenu === "reporte5" ? "rotate" : ""}`}><FaAngleRight /></span>
                 </Link>
                 <Collapse in={openNestedSubmenu === "reporte5"} timeout="auto" unmountOnExit>
                   <ul className="submenu-submenu">
-                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
-                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
-                    <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span> Submenú-Submenú</Link></li>
+                    <li><Link to="Inicio_CD" className="w-100"><span className="icon"><MdArrowRight   /></span> Capturista </Link></li>
+                    <li><Link to="Inicio_L" className="w-100"><span className="icon"><MdArrowRight   /></span> Lector</Link></li>
+                    <li><Link to="Inicio_UR" className="w-100"><span className="icon"><MdArrowRight   /></span> Responsable UR</Link></li>
                   </ul>
                 </Collapse>
               </li>

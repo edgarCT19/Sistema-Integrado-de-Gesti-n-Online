@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
 import SsidChartIcon from '@mui/icons-material/SsidChart';
+import LineChart from "../../components/Charts/chart_LB";
 
 const Linea_Base = () => {
         const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
@@ -54,18 +55,7 @@ const Linea_Base = () => {
  
             <div className="card mt-2">
                 <div className="table-header d-flex justify-content-end align-items-center mt-2 mb-3 p-2">
-                    <Link to="#">
-                        <Button
-                            variant="contained"
-                            className=" mx-2"
-                            color="success"
-                            endIcon={<SsidChartIcon />}
-                            data-bs-toggle="modal" 
-                            data-bs-target="#exampleModal"
-                        >
-                            Ver gráfica
-                        </Button>
-                    </Link>
+                    {/* Content */}
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
                     <div className="table-container">
@@ -133,6 +123,8 @@ const Linea_Base = () => {
                             className=" mx-2"
                             color="success"
                             endIcon={<SsidChartIcon />}
+                            data-bs-toggle="modal" 
+                            data-bs-target="#exampleModal"
                         >
                             Ver gráfica
                         </Button>
@@ -144,7 +136,7 @@ const Linea_Base = () => {
                             <thead>
                                 <tr>
                                     <th colSpan="15" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
-                                    Linea Base kWh/m<sup>2</sup></th>
+                                    Linea Base kWh / m<sup>2</sup></th>
                                 </tr>
                                 <tr className="text-center">
                                     <th>Mes / Año</th>
@@ -204,6 +196,8 @@ const Linea_Base = () => {
                             className=" mx-2"
                             color="success"
                             endIcon={<SsidChartIcon />}
+                            data-bs-toggle="modal" 
+                            data-bs-target="#exampleModal2"
                         >
                             Ver gráfica
                         </Button>
@@ -215,7 +209,7 @@ const Linea_Base = () => {
                             <thead>
                                 <tr>
                                     <th colSpan="15" className="table-title text-center" style={{background:"var(--color-uacam-bitacora)"}}>
-                                    Linea Base kWh/persona </th>
+                                    Linea Base kWh / persona </th>
                                 </tr>
                                 <tr className="text-center">
                                     <th>Mes / Año</th>
@@ -266,23 +260,42 @@ const Linea_Base = () => {
                     </div>
                 </div>
             </div>
+
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Gráfica</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Gráfica kWh / m2</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <LineChart></LineChart>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                  {/*  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> */} 
                 </div>
                 </div>
             </div>
-</div>
+            </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Gráfica  kWh / persona</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <LineChart></LineChart>
+                </div>
+                <div class="modal-footer">
+                  {/*  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> */} 
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
     )
 }

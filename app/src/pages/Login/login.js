@@ -129,7 +129,7 @@ function Login() {
         {/* Link "Avisos de privacidad" */}
         <Box display="flex" justifyContent="flex-start" mt={2}>
           <Link
-            href="#"
+            href="https://uacam.mx/paginas/ver/249"
             sx={{
               color: "var(--color-uacam-primary)",
               display: "flex",
