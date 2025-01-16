@@ -49,6 +49,10 @@ import Linea_Base from "./pages/LineaBase";
 import Capturista from "./pages/Dashboard/index_capturista";
 import ResponsableUR from "./pages/Dashboard/index_responsableUR";
 import Lector from "./pages/Dashboard/index_lector";
+import Gestion_meta from "./pages/Indicadores/DesempeñoDeProcesos/GestionMeta/Index";
+import Gestion_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/GestionProyeccion";
+import Indicador_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/IndProyeccion";
+import M2_construccion from "./pages/Reports/M2Construccion";
 
 function AppContent() {
   const location = useLocation();
@@ -112,6 +116,9 @@ function AppContent() {
             {/* Indicadores */}
             <Route path="/Indicadores_inventarios" element={<Indicadores_inventarios />} />
             <Route path="/Indicadores_globales" element={<GlobalIndicator />} />
+            <Route path="/Gestion_meta" element={<Gestion_meta />} />
+            <Route path="/Gestion_proyeccion" element={<Gestion_proyeccion />} />
+            <Route path="/Indicador_de_proyeccion" element={<Indicador_proyeccion />} />
             {/* Unidad Responsable */}
             {/* Area */}
             <Route path="/area" element={<Area />} />
@@ -127,6 +134,8 @@ function AppContent() {
             <Route path="/agegar_subestacion" element={<Add_Subestacion />} />
             {/* Linea base */}
             <Route path="/lineas_base" element={<Linea_Base />} />
+            {/* Reportes */}
+            <Route path="/M2_construccion" element={<M2_construccion />} />
             {/* Otros componentes */}
             <Route path="/cargando" element={<Loading></Loading>}></Route>
             <Route path="/perfil" element={<Profile></Profile>}></Route>

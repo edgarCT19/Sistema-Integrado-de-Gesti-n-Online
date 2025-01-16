@@ -105,6 +105,20 @@ const Sidebar = () => {
               <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Concentrados</Link></li>
               <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores de concentrados</Link></li>
               <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores finales</Link></li>
+              <li>
+                <Link to="#" className="w-100" onClick={() => toggleNestedSubmenu("indGestion")}>
+                <span className="icon"><MdArrowRight   /></span>
+                  Desempeño de procesos
+                  <span className={`arrow ${openNestedSubmenu === "ind-Gestion" ? "rotate" : ""}`}><FaAngleRight /></span>
+                </Link>
+                <Collapse in={openNestedSubmenu === "indGestion"} timeout="auto" unmountOnExit>
+                  <ul className="submenu-submenu">
+                    <li><Link to="/Gestion_meta" className="w-100"><span className="icon"><MdArrowRight   /></span> Gestión meta de 5% </Link></li>
+                    <li><Link to="/Gestion_proyeccion" className="w-100"><span className="icon"><MdArrowRight   /></span> Gestión proyección de 10% </Link></li>
+                    <li><Link to="/Indicador_de_proyeccion" className="w-100"><span className="icon"><MdArrowRight   /></span> Indicador de proyección </Link></li>
+                  </ul>
+                </Collapse>
+              </li>
             </ul>
           </Collapse>
         </li>
@@ -145,7 +159,7 @@ const Sidebar = () => {
           <Collapse in={openSubmenu === "reportes"} timeout="auto" unmountOnExit>
             <ul className="submenu">
               <li><Link to="/bitacora_de_uso_eficiente" className="w-100"><span className="icon"><MdArrowRight   /></span>Bitácoras</Link></li>
-              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Reporte #</Link></li>
+              <li><Link to="/M2_construccion" className="w-100"><span className="icon"><MdArrowRight   /></span>M2 de Construcción</Link></li>
               <li>
                 <Link to="#" className="w-100" onClick={() => toggleNestedSubmenu("reporte5")}>
                 <span className="icon"><MdArrowRight   /></span>
