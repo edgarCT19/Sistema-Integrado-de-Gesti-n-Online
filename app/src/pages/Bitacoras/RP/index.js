@@ -29,52 +29,7 @@ function Bitacora_mensual_rp () {
     let hour = zeroPad(odate.getHours());
     let mins = zeroPad(odate.getMinutes());
 
-    const [departamento, setDepartamento]=useState([]);
-    const [laboratorio, setLaboratorio]=useState([]);
-    const [agregar, setAgregar] = useState('')
 
-    useEffect(()=> {
-        const getDepartamento = async()=>{
-            const reqData = await fetch("http://localhost:7000/api/departamento");
-            const resData = await reqData.json();
-            setDepartamento(resData);
-        }
-        getDepartamento();
-
-        const getLaboratorio = async()=>{
-            const reqData = await fetch("http://localhost:7000/api/laboratorios");
-            const resData = await reqData.json();
-            setLaboratorio(resData);
-        }
-        getLaboratorio();
-    },[]);
-
-    const handleDepartamento = (e) => {
-        const getDepartamentoid = e.target.value;
-        console.log(getDepartamentoid);
-    }
-
-    const handleLaboratorio = (e) => {
-        const getLaboratorioid = e.target.value;
-        console.log(getLaboratorioid);
-    }
-
-    const onSubmit=(data)=>{
-        console.log(data);
-
-    const res = axios.post("http://localhost:7000/api/add_bitacora1",data)
-    .then(response=>{setAgregar(response.data);
-    });
-
-    if(!agregar)
-    {
-        setAgregar(()=>{
-            navigate('/inicio')
-        },2000);
-    }else{
-        setAgregar("Ocurrio algo")
-    }
-    }
     return (
         <React.Fragment>
         <div className="w-100 right-content">
@@ -85,7 +40,7 @@ function Bitacora_mensual_rp () {
                 Agregar nueva bitacora 
                 </button>
                 </div>
-                <p className="text-success">{agregar}</p>
+                <p className="text-success"></p>
                 <div className="d-flex justify-content-center align-items-center">
                     <div className="table-container">
                         <table className="styled-table text-center">
@@ -224,23 +179,19 @@ function Bitacora_mensual_rp () {
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body"> {/*Los departamentos cambiaron a dependencias, pero no cambia la BD*/}
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <select name="area" {...register("area",{required:true})} class="form-select" aria-label="Default select example" onChange={handleDepartamento}>
+                            <form >
+                                <select name="area" {...register("area",{required:true})} class="form-select" aria-label="Default select example">
                                     <option selected>Dependencia</option>
-                                    {
-                                        departamento.map((departamentoitem,index)=>(
-                                            <option value = {departamentoitem.iddepartamento} key={index}>{departamentoitem.nombre}</option>
-                                        ))
-                                    }
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
                                 </select>
                                 <br></br>
-                                <select {...register("laboratorio",{required:true})} class="form-select" aria-label="Default select example" onChange={handleLaboratorio}>
+                                <select {...register("laboratorio",{required:true})} class="form-select" aria-label="Default select example">
                                     <option selected>Laboratorio</option>
-                                    {
-                                        laboratorio.map((laboratorioitem,index)=>(
-                                            <option value = {laboratorioitem.idlaboratorio} key={index}>{laboratorioitem.nombre_lab}</option>
-                                        ))
-                                    }
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
                                 </select>
                                 <br></br>
                                 <div class="input-group input-group-sm mb-3">
