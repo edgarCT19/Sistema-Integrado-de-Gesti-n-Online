@@ -103,8 +103,7 @@ const Sidebar = () => {
               <li><Link to="/Indicadores_inventarios" className="w-100"><span className="icon"><MdArrowRight   /></span>Inventarios</Link></li>
               <li><Link to="/Indicadores_globales" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores globales</Link></li>
               <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Concentrados</Link></li>
-              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores de concentrados</Link></li>
-              <li><Link to="#" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores finales</Link></li>
+              <li><Link to="/Indicadores_finales" className="w-100"><span className="icon"><MdArrowRight   /></span>Indicadores finales</Link></li>
               <li>
                 <Link to="#" className="w-100" onClick={() => toggleNestedSubmenu("indGestion")}>
                 <span className="icon"><MdArrowRight   /></span>

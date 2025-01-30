@@ -19,14 +19,14 @@ const Bitacora_Inventario = () => {
 
     // Datos de ejemplo (esto debe venir de una API o base de datos)
     const data = [
-        { id: 66001, inicio: '12-08-2024 18:05:12', fin: '12-11-2024 18:05:12', status: 'En curso', observaciones: 'Información adicional que se requiera o importante', nuevos: 1000, editados: 500, eliminados: 100, autoriza: 'Victor Lanz Gutierrez de Velasco', rol: 'Administrador' },
-        { id: 66002, inicio: '10-07-2024 10:00:00', fin: '11-09-2024 15:30:00', status: 'Finalizada', observaciones: 'Detalles adicionales sobre el cierre del período.', nuevos: 800, editados: 300, eliminados: 150, autoriza: 'María Pérez', rol: 'Supervisor' },
-        { id: 66003, inicio: '01-05-2024 09:15:00', fin: '30-06-2024 17:45:00', status: 'Finalizada', observaciones: 'El inventario se completó sin contratiempos.', nuevos: 1200, editados: 450, eliminados: 200, autoriza: 'Juan López', rol: 'Administrador' },
-        { id: 66004, inicio: '20-03-2024 08:30:00', fin: '25-05-2024 16:00:00', status: 'En curso', observaciones: 'Actualización parcial de registros.', nuevos: 950, editados: 600, eliminados: 75, autoriza: 'Ana García', rol: 'Supervisor' },
-        { id: 66005, inicio: '15-01-2024 10:00:00', fin: '18-03-2024 14:30:00', status: 'Finalizada', observaciones: 'Se identificaron algunos errores menores.', nuevos: 700, editados: 350, eliminados: 125, autoriza: 'Carlos Ramírez', rol: 'Administrador' },
-        { id: 66006, inicio: '05-11-2024 11:00:00', fin: '10-12-2024 19:00:00', status: 'En curso', observaciones: 'Se está procesando información adicional.', nuevos: 1100, editados: 550, eliminados: 80, autoriza: 'Laura Sánchez', rol: 'Supervisor' },
-        { id: 66007, inicio: '02-02-2024 07:45:00', fin: '15-04-2024 18:15:00', status: 'Finalizada', observaciones: 'Revisión exhaustiva completada.', nuevos: 850, editados: 400, eliminados: 90, autoriza: 'Pedro Gutierrez', rol: 'Administrador' },
-        { id: 66008, inicio: '12-06-2024 09:00:00', fin: '20-08-2024 17:30:00', status: 'En curso', observaciones: 'Pendiente de finalizar la auditoría.', nuevos: 1300, editados: 480, eliminados: 60, autoriza: 'Sofia Martínez', rol: 'Supervisor' }
+        { id: 66001, inicio: '12-08-2024 18:05:12', fin: '12-11-2024 18:05:12', status: 'En curso', observaciones: 'Información adicional que se requiera o importante',  autoriza: 'Victor Lanz Gutierrez de Velasco', rol: 'Administrador' },
+        { id: 66002, inicio: '10-07-2024 10:00:00', fin: '11-09-2024 15:30:00', status: 'Finalizada', observaciones: 'Detalles adicionales sobre el cierre del período.',  autoriza: 'María Pérez', rol: 'Supervisor' },
+        { id: 66003, inicio: '01-05-2024 09:15:00', fin: '30-06-2024 17:45:00', status: 'Finalizada', observaciones: 'El inventario se completó sin contratiempos.',  autoriza: 'Juan López', rol: 'Administrador' },
+        { id: 66004, inicio: '20-03-2024 08:30:00', fin: '25-05-2024 16:00:00', status: 'En curso', observaciones: 'Actualización parcial de registros.',  autoriza: 'Ana García', rol: 'Supervisor' },
+        { id: 66005, inicio: '15-01-2024 10:00:00', fin: '18-03-2024 14:30:00', status: 'Finalizada', observaciones: 'Se identificaron algunos errores menores.',  autoriza: 'Carlos Ramírez', rol: 'Administrador' },
+        { id: 66006, inicio: '05-11-2024 11:00:00', fin: '10-12-2024 19:00:00', status: 'En curso', observaciones: 'Se está procesando información adicional.',  autoriza: 'Laura Sánchez', rol: 'Supervisor' },
+        { id: 66007, inicio: '02-02-2024 07:45:00', fin: '15-04-2024 18:15:00', status: 'Finalizada', observaciones: 'Revisión exhaustiva completada.',  autoriza: 'Pedro Gutierrez', rol: 'Administrador' },
+        { id: 66008, inicio: '12-06-2024 09:00:00', fin: '20-08-2024 17:30:00', status: 'En curso', observaciones: 'Pendiente de finalizar la auditoría.',  autoriza: 'Sofia Martínez', rol: 'Supervisor' }
     ];
     
 
@@ -83,9 +83,6 @@ const Bitacora_Inventario = () => {
                                     <th>Fecha / Hora de Finalización</th>
                                     <th>Status</th>
                                     <th>Observaciones</th>
-                                    <th>Total Nuevos</th>
-                                    <th>Total Editados</th>
-                                    <th>Total Eliminados</th>
                                     <th>Persona que Autoriza</th>
                                     <th>Rol</th>
                                     <th>Acciones</th>
@@ -100,9 +97,6 @@ const Bitacora_Inventario = () => {
                                             <td>{item.fin}</td>
                                             <td>{item.status}</td>
                                             <td>{item.observaciones}</td>
-                                            <td>{item.nuevos}</td>
-                                            <td>{item.editados}</td>
-                                            <td>{item.eliminados}</td>
                                             <td>{item.autoriza}</td>
                                             <td>{item.rol}</td>
                                             <td>

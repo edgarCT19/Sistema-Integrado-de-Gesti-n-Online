@@ -53,6 +53,7 @@ import Gestion_meta from "./pages/Indicadores/DesempeñoDeProcesos/GestionMeta/I
 import Gestion_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/GestionProyeccion";
 import Indicador_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/IndProyeccion";
 import M2_construccion from "./pages/Reports/M2Construccion";
+import Inidicadores_finales from "./pages/Indicadores/IndicadorFinal";
 
 function AppContent() {
   const location = useLocation();
@@ -83,9 +84,9 @@ function AppContent() {
             <Route path="/new_password" element={<New_Password />} />
             {/* Homepages y/o páginas de inicio */}
             <Route path="/Inicio" element={<Dashboard />} />
-            <Route path="/Inicio_CD" element={<Capturista />} ></Route>
-            <Route path="/Inicio_UR" element={<ResponsableUR />} ></Route>
-            <Route path="/Inicio_L" element={<Lector />} ></Route>
+            <Route path="/Inicio_CD" element={<Capturista />} />
+            <Route path="/Inicio_UR" element={<ResponsableUR />} />
+            <Route path="/Inicio_L" element={<Lector />} />
             {/* Inventarios */}
             <Route path="/Aires_Acondicionados" element={<Inventario_AA />} />
             <Route path="/agregar_AA" element={<Add_AA />} />
@@ -97,7 +98,7 @@ function AppContent() {
             <Route path="/agregar_Miscelaneo" element={<Add_Miscelaneo />} />
             {/* Historial o bitacora de inventarios */}
             <Route path="/Bitacora_de_inventarios" element={<Bitacora_Inventario />} />
-            <Route path="/nuevo_periodo_de_inventario" element={<Periodo_nuevo_inventario></Periodo_nuevo_inventario>} />
+            <Route path="/nuevo_periodo_de_inventario" element={<Periodo_nuevo_inventario />} />
             {/* Reportes */}
             <Route path="/bitacora_de_uso_eficiente" element={<BitacoraUE />} />
             <Route path="/analisis_de_consumo" element={<Analithycs_Energy />} />
@@ -119,6 +120,7 @@ function AppContent() {
             <Route path="/Gestion_meta" element={<Gestion_meta />} />
             <Route path="/Gestion_proyeccion" element={<Gestion_proyeccion />} />
             <Route path="/Indicador_de_proyeccion" element={<Indicador_proyeccion />} />
+            <Route path="/Indicadores_finales" element={<Inidicadores_finales />} />
             {/* Unidad Responsable */}
             {/* Area */}
             <Route path="/area" element={<Area />} />
@@ -137,9 +139,9 @@ function AppContent() {
             {/* Reportes */}
             <Route path="/M2_construccion" element={<M2_construccion />} />
             {/* Otros componentes */}
-            <Route path="/cargando" element={<Loading></Loading>}></Route>
-            <Route path="/perfil" element={<Profile></Profile>}></Route>
-            <Route path="/configuracion" element={<Settings></Settings>}></Route>
+            <Route path="/cargando" element={<Loading></Loading>} />
+            <Route path="/perfil" element={<Profile></Profile>} />
+            <Route path="/configuracion" element={<Settings></Settings>} />
           </Routes>
         </div>
       </div>

@@ -12,11 +12,18 @@ import { Visibility, VisibilityOff, Lock, Email, PrivacyTip } from "@mui/icons-m
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import logoUacam from "../../assets/images/LogoUacamWeb.png";
 import logoYumkaax from "../../assets/images/LogoYumkaax.png";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
+  const [recaptchaValue, setRecaptchaValue] = React.useState(null);
 
   const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+    console.log("Captcha value:", value); // Puedes eliminar esto en producción
+  };
 
   return (
     <Box
@@ -114,6 +121,12 @@ function Login() {
           </Link>
         </Box>
 
+      <div className="d-flex align-items-center justify-content-center">
+        <ReCAPTCHA
+          sitekey="6Ld-974qAAAAAIR_9NEI4ezUmRwi3tIp4uU3MVGY"
+          onChange={handleRecaptchaChange}
+        />
+      </div>
         <Button
           variant="contained"
           width="auto"
