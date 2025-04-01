@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
 import LogoFoot from "../Footer";
 
 import { Link } from "react-router-dom";
 
-import { FaAngleRight, FaChartLine, FaBox, FaMagnifyingGlassChart } from "react-icons/fa6";
+import { FaAngleRight, FaBox, FaMagnifyingGlassChart } from "react-icons/fa6";
 import { MdStackedLineChart, MdOutlineInventory, MdEnergySavingsLeaf, MdArrowRight  } from "react-icons/md";
-import { TbReportAnalytics, TbReceiptDollar, TbPointFilled } from "react-icons/tb";
-import { FaUserCheck, FaRecycle, FaClipboardList, FaHouseDamage, FaBuilding  } from "react-icons/fa";
+import { TbReportAnalytics, TbReceiptDollar } from "react-icons/tb";
+import { FaUserCheck, FaRecycle, FaClipboardList, FaBuilding  } from "react-icons/fa";
 import { SiAzureartifacts } from "react-icons/si";
 
 const Sidebar = () => {

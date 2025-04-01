@@ -54,6 +54,7 @@ import Gestion_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/Gestion
 import Indicador_proyeccion from "./pages/Indicadores/DesempeñoDeProcesos/IndProyeccion";
 import M2_construccion from "./pages/Reports/M2Construccion";
 import Inidicadores_finales from "./pages/Indicadores/IndicadorFinal";
+import TermsAndConditions from "./pages/Others/Terminos";
 
 function AppContent() {
   const location = useLocation();
@@ -142,6 +143,7 @@ function AppContent() {
             <Route path="/cargando" element={<Loading></Loading>} />
             <Route path="/perfil" element={<Profile></Profile>} />
             <Route path="/configuracion" element={<Settings></Settings>} />
+            <Route path="/terminos&condiciones" element={<TermsAndConditions />}></Route>
           </Routes>
         </div>
       </div>

@@ -9,6 +9,9 @@ import { MdOutlineLightMode, MdEmail, MdMenu, MdMenuOpen } from "react-icons/md"
 import { FaWhatsapp, FaBell } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
+import { FaBuilding } from "react-icons/fa";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -44,16 +47,12 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="col-sm-3 d-flex align-items-center pl-4 part2 res-hide">
-              <Tooltip title="Cerrar panel de navegación">
-                <Button variant="text" className="rounded-circle mr-3">
-                  {" "}
-                  <MdMenuOpen />{" "}
-                </Button>
-              </Tooltip> 
-                 
-              {/* <Search></Search> */}   
-
+            <div className="col-sm-3 d-flex align-items-center pl-4 part2 res-hide"> 
+              <Tooltip title="Facultad de Ingeniería">
+                <Alert icon={<FaBuilding fontSize="inherit" />} severity="info">
+                  Unidad Responsable: 001
+                </Alert>
+              </Tooltip>
             </div>
             
             <div className="col-sm-7 justify-content-end d-flex align-items-center part3">
@@ -138,20 +137,20 @@ const Header = () => {
                     <ListItemIcon>
                       <HowToRegIcon fontSize="small" />
                     </ListItemIcon>
-                    Mi perfil
+                    Mi cuenta
                   </MenuItem>
-                  <MenuItem component={Link} to="https://uacam.mx/paginas/ver/249" onClick={handleCloseMyAccDr} className="menu-link">
+                  {/*<MenuItem component={Link} to="https://uacam.mx/paginas/ver/249" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <InfoIcon fontSize="small" />
                     </ListItemIcon>
                     Avisos de privacidad
-                  </MenuItem>
-                  <MenuItem component={Link} to="" onClick={handleCloseMyAccDr} className="menu-link">
+                  </MenuItem>*/}
+                  {/*<MenuItem component={Link} to="/terminos&condiciones" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <AssignmentLateIcon fontSize="small" />
                     </ListItemIcon>
                     Términos y condiciones
-                  </MenuItem>
+                  </MenuItem>*/}
                   <MenuItem component={Link} to="/configuracion" onClick={handleCloseMyAccDr} className="menu-link">
                     <ListItemIcon>
                       <Settings fontSize="small" />
